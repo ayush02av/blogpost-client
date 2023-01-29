@@ -67,7 +67,7 @@ export default function Profile() {
                 </table>
             )}
 
-            <Link href='/blogs/all' className="text-white bg-blue-700 mx-5 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Check Feed</Link>
+            <Link href='/blogs/all' className="text-white bg-blue-700 mx-5 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Feed</Link>
             <Link href='/blogs/my' className="text-white bg-blue-700 mx-5 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">My Blogs</Link>
             <Link href='/blogs/new' className="text-white bg-green-700 mx-5 hover:bg-green-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">New Blog</Link>
             <br /><br />
