@@ -91,5 +91,3 @@ export default function Blog() {
         </div>
     )
 }
-
-Blog.backurl = window.history.state.as

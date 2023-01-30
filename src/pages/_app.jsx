@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
           </div>
         )}
         {router.pathname != '/' && (
-          <div className="w-3/4 mx-auto text-left inline">
+          <div className="w-3/4 mx-auto text-left block">
             {
               Component.backurl ? (
                 <Link href={Component.backurl} className="back-icon"></Link>

@@ -8,8 +8,17 @@
 
 .back-icon {
     --size: 30px;
-    display: block;
+    display: inline-block;
     background-image: url('/back.png');
+    background-size: 100%;
+    width: var(--size);
+    height: var(--size);
+}
+
+.front-icon {
+    --size: 30px;
+    display: inline-block;
+    background-image: url('/front.png');
     background-size: 100%;
     width: var(--size);
     height: var(--size);

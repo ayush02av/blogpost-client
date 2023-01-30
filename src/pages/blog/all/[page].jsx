@@ -34,7 +34,7 @@ export default function All() {
             </Head>
 
             <div className="mb-10">
-                <h1 className="text-2xl font-bold mb-2">All blogs</h1>
+                <h1 className="text-2xl font-bold mb-2">All blogs {router.query.page && `| Page ${router.query.page}`}</h1>
             </div>
 
             {blogs && (
@@ -47,7 +47,11 @@ export default function All() {
                     ))}
                 </div>
             )}
-
+            <br /><br />
+            <Link href={`/blog/all/${router.query.page > 1 ? parseInt(router.query.page) - 1 : router.query.page}`} className="back-icon mx-5"></Link>
+            <Link href={`/blog/all/${parseInt(router.query.page) + 1}`} className="front-icon mx-5"></Link>
         </div>
     )
 }
+
+All.backurl = '/'
