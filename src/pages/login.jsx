@@ -1,6 +1,7 @@
 import { setCookie } from '@/utils/cookies'
 import axios from 'axios'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
@@ -64,8 +65,9 @@ export default function Login() {
                     <input type="password" name="password" id="password" onChange={inputHandler} value={form.password || ""} className="border text-sm rounded-lg block w-full focus:outline-none p-2.5" placeholder="myverystrongpassword" required autoComplete='off' />
                 </div>
                 <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" onClick={submitHandler}>Login</button>
+                <br /><br />
+                <Link href='/signup' className='hover:text-green-800'>Or create a new user here</Link>
             </div>
-
         </div >
     )
 }

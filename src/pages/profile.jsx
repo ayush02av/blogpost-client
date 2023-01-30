@@ -50,18 +50,18 @@ export default function Profile() {
             {profile && (
                 <table className='mx-auto text-left mb-10'>
                     <tr>
-                        <th>Id&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <th>:</th>
+                        <th>Id</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         <td>{profile.id}</td>
                     </tr>
                     <tr>
-                        <th>Email&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <th>:</th>
+                        <th>Email</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         <td>{profile.email}</td>
                     </tr>
                     <tr>
-                        <th>Username&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <th>:</th>
+                        <th>Username</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         <td>{profile.username}</td>
                     </tr>
                 </table>
