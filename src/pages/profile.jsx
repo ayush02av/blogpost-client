@@ -67,9 +67,8 @@ export default function Profile() {
                 </table>
             )}
 
-            <Link href='/blog/all' className="text-white bg-blue-700 mx-5 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Feed</Link>
-            <Link href='/blog/my' className="text-white bg-blue-700 mx-5 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">My Blogs</Link>
-            <Link href='/blog/new' className="text-white bg-green-700 mx-5 hover:bg-green-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">New Blog</Link>
+            <Link href='/blog/my' className="text-white bg-blue-700 mx-5 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Blogs</Link>
+            <Link href='/blog/new' className="text-white bg-green-700 mx-5 hover:bg-green-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">New</Link>
             <br /><br />
             <button type="submit" className="text-white bg-yellow-500 mx-5 hover:bg-yellow-600 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" onClick={logoutHandler}>Reset Password</button>
             <button type="submit" className="text-white bg-red-700 mx-5 hover:bg-red-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" onClick={logoutHandler}>Logout</button>
