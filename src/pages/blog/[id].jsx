@@ -46,7 +46,6 @@ export default function Blog() {
                         }
                     })
                         .then((res) => {
-                            console.log(res)
                             Swal.fire({
                                 icon: 'success',
                                 text: 'Blog deleted'
@@ -56,13 +55,7 @@ export default function Blog() {
                                 })
                         })
                         .catch((error) => {
-                            Swal.fire({
-                                icon: 'error',
-                                text: error.response.data.message
-                            })
-                                .then(() => {
-                                    router.push('/blog/my')
-                                })
+                            router.push('/blog/my')
                         })
                 }
             })
