@@ -39,9 +39,6 @@ export default function Login() {
                     icon: 'error',
                     text: error.response.data.message
                 })
-                    .then(() => {
-                        router.push('/')
-                    })
             })
     }
 

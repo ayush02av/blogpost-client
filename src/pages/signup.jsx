@@ -43,16 +43,13 @@ export default function Signup() {
                     icon: 'error',
                     text: error.response.data.message
                 })
-                    .then(() => {
-                        router.push('/')
-                    })
             })
     }
 
     return (
         <div className="container">
             <Head>
-                <title>Singup | BlogPost</title>
+                <title>Signup | BlogPost</title>
             </Head>
 
             <div className="mb-10">
