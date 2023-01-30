@@ -1,4 +1,3 @@
-import { getCookie } from '@/utils/cookies'
 import axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -27,39 +26,6 @@ export default function Blog() {
         }
 
     }, [router.query])
-
-    const deleteHandler = () => {
-        Swal.fire({
-            icon: 'question',
-            allowEscapeKey: false,
-            allowOutsideClick: false,
-            title: 'Delete blog?',
-            showCancelButton: true,
-            cancelButtonText: 'No',
-            confirmButtonText: 'Yes'
-        })
-            .then((res) => {
-                if (res.isConfirmed) {
-                    axios.delete(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/blog/${router.query.id}`, {
-                        headers: {
-                            Authorization: getCookie('token')
-                        }
-                    })
-                        .then((res) => {
-                            Swal.fire({
-                                icon: 'success',
-                                text: 'Blog deleted'
-                            })
-                                .then(() => {
-                                    router.push('/profile')
-                                })
-                        })
-                        .catch((error) => {
-                            router.push('/blog/my')
-                        })
-                }
-            })
-    }
 
     return (
         <div className="container">
