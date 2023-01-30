@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
@@ -10,7 +11,7 @@ export default function All() {
 
     useEffect(() => {
         if (router.query.page) {
-            axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/public/blog/${router.query.page}`)
+            axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/public/blog/?page=${router.query.page}`)
                 .then((res) => {
                     setBlogs(res.data.blogs)
                 })
@@ -39,10 +40,10 @@ export default function All() {
             {blogs && (
                 <div className="container mx-auto w-full sm:w-1/2 overflow-y-scroll h-96 text-left">
                     {blogs.map((blog, index) => (
-                        <div key={index} className="bg-red-100 m-5 p-5 rounded-md">
+                        <Link href={`/blog/${blog.id}`} key={index} className="block bg-red-100 m-5 p-5 rounded-md">
                             <span className="font-semibold">{blog.title}</span>
                             <p>{blog.content.slice(0, 20)}</p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             )}
