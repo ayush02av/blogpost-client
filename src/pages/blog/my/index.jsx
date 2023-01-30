@@ -55,3 +55,5 @@ export default function My() {
         </div>
     )
 }
+
+My.backurl = '/profile'

@@ -5,3 +5,12 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.back-icon {
+    --size: 30px;
+    display: block;
+    background-image: url('/back.png');
+    background-size: 100%;
+    width: var(--size);
+    height: var(--size);
+}

@@ -1,12 +1,11 @@
 import { getCookie } from '@/utils/cookies'
 import axios from 'axios'
 import Head from 'next/head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 
-export default function All() {
+export default function Blog() {
     const router = useRouter()
     const [blog, setBlog] = useState(null)
 
@@ -92,3 +91,5 @@ export default function All() {
         </div>
     )
 }
+
+Blog.backurl = window.history.state.as

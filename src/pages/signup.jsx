@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 
-export default function Singup() {
+export default function Signup() {
 
     const router = useRouter()
 
@@ -92,3 +92,5 @@ export default function Singup() {
         </div >
     )
 }
+
+Signup.backurl = '/'
