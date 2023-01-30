@@ -61,7 +61,7 @@ export default function Blog() {
                                 text: error.response.data.message
                             })
                                 .then(() => {
-                                    router.push('/login')
+                                    router.push('/blog/my')
                                 })
                         })
                 }
