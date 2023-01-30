@@ -2,12 +2,12 @@ import { getCookie } from '@/utils/cookies'
 import axios from 'axios'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 
 export default function New() {
-
     const router = useRouter()
+    const [fetchStatus, setFetchStatus] = useState(true)
 
     const [form, setForm] = useState({
         title: null,
@@ -22,7 +22,7 @@ export default function New() {
     }
 
     const submitHandler = () => {
-        axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/blog/`, form, {
+        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/blog/${router.query.id}`, form, {
             headers: {
                 Authorization: getCookie('token')
             }
@@ -33,7 +33,7 @@ export default function New() {
                     text: res.data.message
                 })
                     .then(() => {
-                        router.push('/blogs/my')
+                        router.push('/blog/my')
                     })
             })
             .catch((error) => {
@@ -42,19 +42,47 @@ export default function New() {
                     text: error.response.data.message
                 })
                     .then(() => {
-                        router.push('/blogs/new')
+                        router.push(`/blog/my/${router.query.id}`)
                     })
             })
     }
 
+    useEffect(() => {
+        if (router.query.id && fetchStatus) {
+            axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/user/blog/${router.query.id}`, {
+                headers: {
+                    Authorization: getCookie('token')
+                }
+            })
+                .then((res) => {
+                    setForm({
+                        ...form,
+                        title: res.data.blog.title,
+                        content: res.data.blog.content
+                    })
+                    setFetchStatus(false)
+                })
+                .catch((error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        text: error.response.data.message
+                    })
+                        .then(() => {
+                            router.push('/login')
+                        })
+                })
+        }
+
+    }, [router.query, form, fetchStatus])
+
     return (
         <div className="container">
             <Head>
-                <title>New Blog | BlogPost</title>
+                <title>Edit Blog {router.query.id} | BlogPost</title>
             </Head>
 
             <div className="mb-10">
-                <h1 className="text-2xl font-bold mb-2">Post new blog</h1>
+                <h1 className="text-2xl font-bold mb-2">Edit Blog {router.query.id}</h1>
             </div>
 
             <div className="container mx-auto w-full sm:w-1/2">
